@@ -5,7 +5,6 @@ import React from 'react'
 import { fileURLToPath } from 'url'
 
 import config from '@/payload.config'
-import './styles.css'
 
 export default async function HomePage() {
   const headers = await getHeaders()
@@ -16,7 +15,7 @@ export default async function HomePage() {
   const fileURL = `vscode://file/${fileURLToPath(import.meta.url)}`
 
   return (
-    <div className="home">
+    <div className="home bg-red-500">
       <div className="content">
         <picture>
           <source srcSet="https://raw.githubusercontent.com/payloadcms/payload/main/packages/ui/src/assets/payload-favicon.svg" />
@@ -31,7 +30,7 @@ export default async function HomePage() {
         {user && <h1>Welcome back, {user.email}</h1>}
         <div className="links">
           <a
-            className="admin"
+            className="admin bg-red-500"
             href={payloadConfig.routes.admin}
             rel="noopener noreferrer"
             target="_blank"
@@ -39,7 +38,7 @@ export default async function HomePage() {
             Go to admin panel
           </a>
           <a
-            className="docs"
+            className="docs bg-yellow-500"
             href="https://payloadcms.com/docs"
             rel="noopener noreferrer"
             target="_blank"

@@ -12,5 +12,10 @@ export const Media: CollectionConfig = {
       required: true,
     },
   ],
-  upload: true,
+  upload: {
+    staticDir: 'media', // where local files would go (ignored if you disable local storage)
+    disableLocalStorage: true, // stop writing to disk entirely :contentReference[oaicite:1]{index=1}
+    imageSizes: [{ name: 'thumbnail', width: 400, height: 400 }],
+    mimeTypes: ['image/*'],
+  },
 }
